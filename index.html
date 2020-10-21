@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!-- 
+//URLS
+const baseBackend = 'http://localhost:3000/locations'
+const showPage = 'http://localhost:3001/showPage.html' -->
+
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -20,9 +25,11 @@
 
             <div class = "container">
                 <p>We can put the search function here</p>
-                <form id="city_submit" action="">
-                    <label for="">Enter your city</label>
-                    <input  type="text" placeholder="enter your city"> 
+                <form id="city_submit" name="search_term" action="">
+                    <label name = "search_term" for="">Enter your city</label>
+                    <input  name ="search_Term type="text" placeholder="enter your city"> 
+                    <input id="newQuery" type="submit" value="see results">
+                    <a href="http://localhost:3001/showPage.html" onclick="document.getElementById('city_submit').submit();"
                 </form>
             </div>
         </main>   
