@@ -8,8 +8,9 @@ const showPage = 'http://localhost:3001/showPage.html' -->
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script defer src = "index.js"></script>
+        <script defer src = "index2.js"></script>
         <link rel="stylesheet" href="app.css">
+        <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
         <title>Home Page</title>
     </head>
     <body>
@@ -25,11 +26,10 @@ const showPage = 'http://localhost:3001/showPage.html' -->
 
             <div class = "container">
                 <p>We can put the search function here</p>
-                <form id="city_submit" name="search_term" action="">
-                    <label name = "search_term" for="">Enter your city</label>
-                    <input  name ="search_Term type="text" placeholder="enter your city"> 
+                <form id="city_submit_form" >
+                    <label name = "search_term" for = "">Enter your city</label>
+                    <input  name ="search_term" type = "text" placeholder="enter your city"> 
                     <input id="newQuery" type="submit" value="see results">
-                    <a href="http://localhost:3001/showPage.html" onclick="document.getElementById('city_submit').submit();"
                 </form>
             </div>
         </main>   
@@ -46,6 +46,14 @@ const showPage = 'http://localhost:3001/showPage.html' -->
             </div>
             <div class ="flex-container">
                 <p>Top 10 Countries</p>
+
+            </div>
+
+            <div class="flex-container">
+                <ul>
+                    Your search result:
+                    <li></li>
+                </ul>
 
             </div>
         </section>
