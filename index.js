@@ -23,7 +23,7 @@ function sortLocations(locations) {
     const sortedLocations = locations.sort(function (a,b) {
         return b.confirmed - a.confirmed;
     })
-    sortedLocations.slice(0, 11).forEach(displayCityLocations)
+    sortedLocations.slice(0, 10).forEach(displayCityLocations)
 }
 
 
@@ -49,48 +49,48 @@ function totalUSNumbers(locations) {
 
 
 
-const baseBackend = 'http://localhost:3000/locations'
-const showPage = 'http://localhost:3001/showPage.html'
+// const baseBackend = 'http://localhost:3000/locations'
+// const showPage = 'http://localhost:3001/showPage.html'
 
-//search params
-const searchParams = new URLSearchParams(window.location.search)
-const search_term = searchParams.get("search_term")
-console.log(search_term)
+// //search params
+// const searchParams = new URLSearchParams(window.location.search)
+// const search_term = searchParams.get("search_term")
+// console.log(search_term)
 
-let searchResultsBackend = `${locationIndexURL}`
+// let searchResultsBackend = `${locationIndexURL}`
 
-if(search_term) {
-    searchResultsBackend = `${locationIndexURL}?search_term=${search_term}`
-}
+// if(search_term) {
+//     searchResultsBackend = `${locationIndexURL}?search_term=${search_term}`
+// }
     
-fetch(locationIndexURL)
-    .then (parseJSON)
-    .then (all_objects => display(all_objects))
+// fetch(locationIndexURL)
+//     .then (parseJSON)
+//     .then (all_objects => display(all_objects))
 
-function display(data) {
-    console.log(data[0])
-    const h1 = document.createElement('h1')
-    h1.innerText = data[0]
+// function display(data) {
+//     console.log(data[0])
+//     const h1 = document.createElement('h1')
+//     h1.innerText = data[0]
     
-}
+// }
 
-function display(all_data){
-    console.log(all_data)
-    console.log(search_term)
-    let cities = all_data.map (x => x.city)
-    x = cities.find(function(city) {
-        city == `"${search_term}"`
-    })
-}
+// function display(all_data) {
+//     console.log(all_data)
+//     console.log(search_term)
+//     let cities = all_data.map (x => x.city)
+//     x = cities.find(function(city) {
+//         city == `"${search_term}"`
+//     })
+// }
 
 
 
-function findCity(){
-    let cities = all_data.map (x => x.city)
-    cities.find(function(city) {
-        city == search_term 
-    })
-}
+// function findCity(){
+//     let cities = all_data.map (x => x.city)
+//     cities.find(function(city) {
+//         city == search_term 
+//     })
+// }
 
 
 function parseJSON(response) {

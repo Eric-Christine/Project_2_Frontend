@@ -9,11 +9,9 @@ const showPage = 'http://localhost:3001/showPage.html' -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script defer src = "index2.js"></script>
+        <script defer src = "index.js"></script>
         <link rel="stylesheet" href="app.css">
         <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
-        <!-- font awesome -->
-        <!-- <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> -->
         <title>Home Page</title>
     </head>
     <body>
@@ -29,17 +27,13 @@ const showPage = 'http://localhost:3001/showPage.html' -->
 
             <div class = "container">
                 <p>We can put the search function here</p>
-                <form id="city_submit" action="">
-                    <label for="">Enter your city</label>
-                    <input  type="text" placeholder="enter your city">
-                    
-                    <input type="submit" value="search">
-
                 <form id="city_submit_form" >
                     <label name = "search_term" for = "">Enter your city</label>
                     <input  name ="search_term" type = "text" placeholder="enter your city"> 
                     <input id="newQuery" type="submit" value="see results">
                 </form>
+                    <p>Your search result:</p>
+                    <ul style="list-style-type:none;" id="search-result"></ul>
             </div>
         </main>   
         
@@ -52,15 +46,14 @@ const showPage = 'http://localhost:3001/showPage.html' -->
         
         <div class ="flex-container">
             <p>Total US numbers:
-            <ul class="us-numbers-pin"></ul>
+            <ul style="list-style-type:none;" class="us-numbers-pin"></ul>
             </p>
-            
-            <div class="flex-container">
-                <ul>
-                    Your search result:
-                </ul>
+        </div>
+            <!-- <div class="flex-container">
+                <p>Your search result:</p>
+                <ul id="search-result"></ul>
 
-            </div>
+            </div> -->
         </section>
 
 
