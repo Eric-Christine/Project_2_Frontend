@@ -1,15 +1,24 @@
 <!DOCTYPE html>
+<!-- 
+//URLS
+const baseBackend = 'http://localhost:3000/locations'
+const showPage = 'http://localhost:3001/showPage.html' -->
+
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script defer src = "index.js"></script>
+        <script defer src = "index2.js"></script>
         <link rel="stylesheet" href="app.css">
+        <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
+        <!-- font awesome -->
+        <!-- <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> -->
         <title>Home Page</title>
     </head>
     <body>
         <header>
-            <h1>Covid-19 Dashboard</h1>
+            <h1>Covid-19 Dashboard <i class="fas fa-virus">Font Awesome</i>  </h1>
         </header>
         <main>
             <div class = "container">
@@ -25,12 +34,16 @@
                     <input  type="text" placeholder="enter your city">
                     
                     <input type="submit" value="search">
+
+                <form id="city_submit_form" >
+                    <label name = "search_term" for = "">Enter your city</label>
+                    <input  name ="search_term" type = "text" placeholder="enter your city"> 
+                    <input id="newQuery" type="submit" value="see results">
                 </form>
             </div>
         </main>   
         
         <section class = "flex-container">
-        </div>
         <div class ="flex-container">
             <p>Top 10 Cities:
                 <ol class="cities-pin"></ol>
@@ -41,6 +54,13 @@
             <p>Total US numbers:
             <ul class="us-numbers-pin"></ul>
             </p>
+            
+            <div class="flex-container">
+                <ul>
+                    Your search result:
+                </ul>
+
+            </div>
         </section>
 
 

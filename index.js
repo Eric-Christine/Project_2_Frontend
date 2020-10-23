@@ -1,3 +1,4 @@
+
 const baseURL = "http://localhost:3000"
 const locationIndexURL = `${baseURL}/locations`
 //
@@ -46,30 +47,50 @@ function totalUSNumbers(locations) {
     usNumbersPin.append(USNumbers)
 }   
 
-// const magic_countries = [
-//     "Australia",
-//     "Brazil",
-//     "Canada",
-//     "Chile",
-//     "China",
-//     "Columbia",
-//     "Denmark",
-//     "France",
-//     "Germany",
-//     "India",
-//     "Italy",
-//     "Japan",
-//     "Mexico",
-//     "Netherlands",
-//     "Pakistan",
-//     "Peru",
-//     "Russia",
-//     "Spain",
-//     "Sweden",
-//     "US",
-//     "Ukraine",
-//     "United Kingdom"
-// ]
+
+
+const baseBackend = 'http://localhost:3000/locations'
+const showPage = 'http://localhost:3001/showPage.html'
+
+//search params
+const searchParams = new URLSearchParams(window.location.search)
+const search_term = searchParams.get("search_term")
+console.log(search_term)
+
+let searchResultsBackend = `${locationIndexURL}`
+
+if(search_term) {
+    searchResultsBackend = `${locationIndexURL}?search_term=${search_term}`
+}
+    
+fetch(locationIndexURL)
+    .then (parseJSON)
+    .then (all_objects => display(all_objects))
+
+function display(data) {
+    console.log(data[0])
+    const h1 = document.createElement('h1')
+    h1.innerText = data[0]
+    
+}
+
+function display(all_data){
+    console.log(all_data)
+    console.log(search_term)
+    let cities = all_data.map (x => x.city)
+    x = cities.find(function(city) {
+        city == `"${search_term}"`
+    })
+}
+
+
+
+function findCity(){
+    let cities = all_data.map (x => x.city)
+    cities.find(function(city) {
+        city == search_term 
+    })
+}
 
 
 function parseJSON(response) {
