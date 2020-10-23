@@ -29,7 +29,7 @@ function sortLocations(locations) {
 
 function displayCityLocations(location) {
     const cityName = document.createElement('li')
-    cityName.innerText = `${location.city}, Confirmed Cases: ${location.confirmed} Deaths: ${location.deaths}`
+    cityName.innerText = `${location.city}, ${location.province} Confirmed Cases: ${location.confirmed} Deaths: ${location.deaths}`
  
     citiesPin.append(cityName)
 }
