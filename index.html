@@ -20,50 +20,51 @@ const showPage = 'http://localhost:3001/showPage.html' -->
         <header>
             <h1>Covid-19 Dashboard <i class="fas fa-virus"></i>  </h1>
         </header>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/qiMcXzfm9Mg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+        
         </iframe>
-        <main>
-            <div class = "container">
-                <p>Covid 19 Dashboard gives you up to date information about the number of cases in your area.</p>
-                <p>We can filter covid-19 cases by city</p>
-                <p>See statistics on confirmed cases, deaths, and recovered cases.</p>
+        <div id="paige-container">
+            <div id="content-wrap">
+                <main>
+                    <div class = "container">
+                        <p>Covid 19 Dashboard gives you up to date information about the number of cases in your area.</p>
+                        <p>We can filter covid-19 cases by city</p>
+                    </div>
+                    <div class = "container">
+                        <form id="city_submit_form" >
+                            <label name = "search_term" for = ""></label>
+                            <input  name ="search_term" type = "text" placeholder="Enter city name"> 
+                            <input id="newQuery" type="submit" value="see results">
+                        </form>
+                        <p>Your search result:</p>
+                        <ul style="list-style-type:none;" id="search-result"></ul>
+                    </div>
+                </main>   
+                        <div class="container">
+                            <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/qiMcXzfm9Mg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe src="https://public.domo.com/cards/axpDJ" width="60%" height="500" marginheight="0" marginwidth="0" frameborder="0"></iframe> -->
+                            <iframe src="https://public.domo.com/cards/azrGr" width="70%" height="600" marginheight="0" marginwidth="0" frameborder="0"></iframe>
+                        </div>
+                <div class="container">
+                    <section class = "flex-container">
+                        <div class ="flex-container">
+                            <p>Top 10 Cities:
+                                <ol class="cities-pin"></ol>
+                            </p>
+                        </div>
+                        
+                        <div class ="flex-container">
+                            <p>Total US numbers:
+                            <ul style="list-style-type:none;" class="us-numbers-pin"></ul>
+                            </p>
+                        </div>
+                    </section>
+                    </div>
+                </div>
             </div>
-
-            <div class = "container">
-                <form id="city_submit_form" >
-                    <label name = "search_term" for = "">Enter your city</label>
-                    <input  name ="search_term" type = "text" placeholder="enter your city"> 
-                    <input id="newQuery" type="submit" value="see results">
-                </form>
-                    <p>Your search result:</p>
-                    <ul style="list-style-type:none;" id="search-result"></ul>
-            </div>
-        </main>   
-        
-        <section class = "flex-container">
-        <div class ="flex-container">
-            <p>Top 10 Cities:
-                <ol class="cities-pin"></ol>
-            </p>
+            <footer id="footer">
+                <p class="left">For more information about COVID-19 and what you can do to stay safe visit <a href="https://www.cdc.gov/coronavirus/2019-ncov/index.html">cdc.gov</a></p>
+                <p class="right">2020 Created by Eric Christine and Jack Sanders</p>
+            </footer>
         </div>
-        
-        <div class ="flex-container">
-            <p>Total US numbers:
-            <ul style="list-style-type:none;" class="us-numbers-pin"></ul>
-            </p>
-        </div>
-            <!-- <div class="flex-container">
-                <p>Your search result:</p>
-                <ul id="search-result"></ul>
-
-            </div> -->
-        </section>
-
-
-        </div>
-        <footer>
-            <p class="left">For more information about COVID-19 and what you can do to stay safe visit <a href="https://www.cdc.gov/coronavirus/2019-ncov/index.html">cdc.gov</a></p>
-            <p class="right">2020 Created by Eric Christine and Jack Sanders</p>
-        </footer>
     </body>
 </html>
