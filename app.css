@@ -35,7 +35,9 @@ body {
     padding: 1rem;
 }
 
-
+.left {
+    text-align: left;
+}
 
 footer {
     background-color: black;

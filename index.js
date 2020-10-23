@@ -1,5 +1,54 @@
-console.log('working')
-//URLS
+
+const baseURL = "http://localhost:3000"
+const locationIndexURL = `${baseURL}/locations`
+//
+citiesPin = document.querySelector('.cities-pin')
+usNumbersPin = document.querySelector('.us-numbers-pin')
+//
+
+
+fetch(locationIndexURL)
+    .then(parseJSON)
+    .then(inputLocations)
+
+
+function inputLocations(locations) {
+    grabCountry = locations.filter(location => location.country == "US")
+    sortLocations(grabCountry)
+    totalUSNumbers(grabCountry)
+}
+
+
+function sortLocations(locations) {
+    const sortedLocations = locations.sort(function (a,b) {
+        return b.confirmed - a.confirmed;
+    })
+    sortedLocations.slice(0, 11).forEach(displayCityLocations)
+}
+
+
+function displayCityLocations(location) {
+    const cityName = document.createElement('li')
+    cityName.innerText = `${location.city}, confirmed cases: ${location.confirmed} Deaths: ${location.deaths}`
+ 
+    citiesPin.append(cityName)
+}
+
+function totalUSNumbers(locations) {
+        
+    condense_confirmed = grabCountry.reduce( (sum, location) => sum + location.confirmed, 0)
+        
+    condense_deaths = grabCountry.reduce( (sum, location) => sum + location.deaths, 0)
+        
+    condense_recovered = grabCountry.reduce( (sum, location) => sum + location.recovered, 0)
+
+    const USNumbers = document.createElement('li')
+    USNumbers.innerText = `confirmed cases: ${condense_confirmed} Deaths: ${condense_deaths}`
+    usNumbersPin.append(USNumbers)
+}   
+
+
+
 const baseBackend = 'http://localhost:3000/locations'
 const showPage = 'http://localhost:3001/showPage.html'
 
@@ -8,14 +57,14 @@ const searchParams = new URLSearchParams(window.location.search)
 const search_term = searchParams.get("search_term")
 console.log(search_term)
 
-let searchResultsBackend = `${baseBackend}`
+let searchResultsBackend = `${locationIndexURL}`
 
 if(search_term) {
-    searchResultsBackend = `${baseBackend}?search_term=${search_term}`
+    searchResultsBackend = `${locationIndexURL}?search_term=${search_term}`
 }
     
-fetch(baseBackend)
-    .then (response => response.json())
+fetch(locationIndexURL)
+    .then (parseJSON)
     .then (all_objects => display(all_objects))
 
 function display(data) {
@@ -44,14 +93,6 @@ function findCity(){
 }
 
 
-
-
-            
-            
-
-const array1 = [1, 4, 9, 16];
-
-// pass a function to map
-const map1 = array1.map(x => x * 2);
-
-console.log(map1);
+function parseJSON(response) {
+    return response.json()
+}
