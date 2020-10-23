@@ -11,22 +11,23 @@ const showPage = 'http://localhost:3001/showPage.html' -->
         <script defer src = "index2.js"></script>
         <script defer src = "index.js"></script>
         <link rel="stylesheet" href="app.css">
+        <link rel="stylesheet" href="fontawesome.css">
+        <script src="https://kit.fontawesome.com/1c30e23579.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
         <title>Home Page</title>
     </head>
     <body>
         <header>
-            <h1>Covid-19 Dashboard <i class="fas fa-virus">Font Awesome</i>  </h1>
+            <h1>Covid-19 Dashboard <i class="fas fa-virus"></i>  </h1>
         </header>
         <main>
             <div class = "container">
                 <p>Covid 19 Dashboard gives you up to date information about the number of cases in your area.</p>
-                <p>We can filter cases by Country, Province, State, and City</p>
+                <p>We can filter covid-19 cases by city</p>
                 <p>See statistics on confirmed cases, deaths, and recovered cases.</p>
             </div>
 
             <div class = "container">
-                <p>We can put the search function here</p>
                 <form id="city_submit_form" >
                     <label name = "search_term" for = "">Enter your city</label>
                     <input  name ="search_term" type = "text" placeholder="enter your city"> 
@@ -58,10 +59,8 @@ const showPage = 'http://localhost:3001/showPage.html' -->
 
 
         </div>
-
-
         <footer>
-            <p class="left">for more information about COVID-19 and what you can do to stay safe visit <a href="https://www.cdc.gov/coronavirus/2019-ncov/index.html">cdc.gov</a></p>
+            <p class="left">For more information about COVID-19 and what you can do to stay safe visit <a href="https://www.cdc.gov/coronavirus/2019-ncov/index.html">cdc.gov</a></p>
             <p class="right">2020 Created by Eric Christine and Jack Sanders</p>
         </footer>
     </body>

@@ -3,7 +3,7 @@
 }
 
 header{
-    background-color: white;
+    background-color: rgb(189, 210, 235);
     color: black;
 }
 
@@ -48,3 +48,4 @@ footer {
     height: 2rem;
     text-align: right;
 }
+
