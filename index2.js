@@ -1,6 +1,5 @@
 const searchParams = new URLSearchParams(window.location.search)
 const search_term = searchParams.get("search_term")
-console.log(search_term)
 
 fetch('http://localhost:3000/locations')
     .then (response => response.json())
@@ -8,13 +7,7 @@ fetch('http://localhost:3000/locations')
 
 function renderdata(data){
     showSearchResult(data)
-    displayDeaths(data)
 }
-
-
-function displayDeaths(data) {
-}
-
 
 
 function showSearchResult(data){
@@ -22,10 +15,8 @@ function showSearchResult(data){
     const confirmed_cases = result.map(object => object.confirmed)
     const confirmed_deaths = result.map(object => object.deaths)
     const confirmed_recoveries = result.map(object => object.recovered)
-    console.log(confirmed_recoveries)
     const confirmed_cases_result = confirmed_cases[0]
     const lastUpdated = result.map(object => object.lastUpdate)
-    console.log(confirmed_cases_result)
    
 
     // create element
@@ -44,7 +35,7 @@ function showSearchResult(data){
 
 
     // append element
-    const bullet_point =  document.querySelector('ul')
+    const bullet_point =  document.querySelector('#search-result')
     bullet_point.append(displayCases, displayDeaths, displayRecovered, lastUpdated)
 
 
